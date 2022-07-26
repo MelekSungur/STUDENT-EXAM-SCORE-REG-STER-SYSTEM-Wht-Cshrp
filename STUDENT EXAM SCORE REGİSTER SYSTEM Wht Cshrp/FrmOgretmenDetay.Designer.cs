@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MskNumara = new System.Windows.Forms.MaskedTextBox();
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.TxtSoyad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,17 +46,14 @@
             this.TxtSinav3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.LblKalanSayisi = new System.Windows.Forms.Label();
             this.LblGecenSayisi = new System.Windows.Forms.Label();
             this.LblOrt = new System.Windows.Forms.Label();
-            this.LblKalanSayisi = new System.Windows.Forms.Label();
+            this.labelll = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dBNotKayitDataSet = new STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp.DBNotKayitDataSet();
-            this.tBLDERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tBLDERSTableAdapter = new STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp.DBNotKayitDataSetTableAdapters.TBLDERSTableAdapter();
             this.oGRIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oGRNUMARADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oGRADDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,14 +63,16 @@
             this.oGRS3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRTALAMADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dURUMDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.MskNumara = new System.Windows.Forms.MaskedTextBox();
+            this.tBLDERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBNotKayitDataSet = new STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp.DBNotKayitDataSet();
+            this.tBLDERSTableAdapter = new STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp.DBNotKayitDataSetTableAdapters.TBLDERSTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBNotKayitDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLDERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNotKayitDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -90,6 +90,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğrenci Ekle";
+            // 
+            // MskNumara
+            // 
+            this.MskNumara.Location = new System.Drawing.Point(80, 19);
+            this.MskNumara.Mask = "0000";
+            this.MskNumara.Name = "MskNumara";
+            this.MskNumara.Size = new System.Drawing.Size(156, 20);
+            this.MskNumara.TabIndex = 7;
+            this.MskNumara.ValidatingType = typeof(int);
             // 
             // BtnKaydet
             // 
@@ -218,10 +227,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.LblKalanSayisi);
             this.groupBox3.Controls.Add(this.LblGecenSayisi);
             this.groupBox3.Controls.Add(this.LblOrt);
-            this.groupBox3.Controls.Add(this.LblKalanSayisi);
+            this.groupBox3.Controls.Add(this.labelll);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(534, 20);
@@ -231,14 +240,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Not Ekle";
             // 
-            // label12
+            // LblKalanSayisi
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(113, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(19, 13);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "00";
+            this.LblKalanSayisi.AutoSize = true;
+            this.LblKalanSayisi.Location = new System.Drawing.Point(113, 72);
+            this.LblKalanSayisi.Name = "LblKalanSayisi";
+            this.LblKalanSayisi.Size = new System.Drawing.Size(19, 13);
+            this.LblKalanSayisi.TabIndex = 10;
+            this.LblKalanSayisi.Text = "00";
             // 
             // LblGecenSayisi
             // 
@@ -258,14 +267,14 @@
             this.LblOrt.TabIndex = 8;
             this.LblOrt.Text = "00";
             // 
-            // LblKalanSayisi
+            // labelll
             // 
-            this.LblKalanSayisi.AutoSize = true;
-            this.LblKalanSayisi.Location = new System.Drawing.Point(23, 72);
-            this.LblKalanSayisi.Name = "LblKalanSayisi";
-            this.LblKalanSayisi.Size = new System.Drawing.Size(64, 13);
-            this.LblKalanSayisi.TabIndex = 7;
-            this.LblKalanSayisi.Text = "Kalan Sayısı";
+            this.labelll.AutoSize = true;
+            this.labelll.Location = new System.Drawing.Point(23, 72);
+            this.labelll.Name = "labelll";
+            this.labelll.Size = new System.Drawing.Size(64, 13);
+            this.labelll.TabIndex = 7;
+            this.labelll.Text = "Kalan Sayısı";
             // 
             // label8
             // 
@@ -317,20 +326,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(782, 121);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // dBNotKayitDataSet
-            // 
-            this.dBNotKayitDataSet.DataSetName = "DBNotKayitDataSet";
-            this.dBNotKayitDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBLDERSBindingSource
-            // 
-            this.tBLDERSBindingSource.DataMember = "TBLDERS";
-            this.tBLDERSBindingSource.DataSource = this.dBNotKayitDataSet;
-            // 
-            // tBLDERSTableAdapter
-            // 
-            this.tBLDERSTableAdapter.ClearBeforeFill = true;
             // 
             // oGRIDDataGridViewTextBoxColumn
             // 
@@ -387,14 +382,19 @@
             this.dURUMDataGridViewCheckBoxColumn.HeaderText = "DURUM";
             this.dURUMDataGridViewCheckBoxColumn.Name = "dURUMDataGridViewCheckBoxColumn";
             // 
-            // MskNumara
+            // tBLDERSBindingSource
             // 
-            this.MskNumara.Location = new System.Drawing.Point(80, 19);
-            this.MskNumara.Mask = "0000";
-            this.MskNumara.Name = "MskNumara";
-            this.MskNumara.Size = new System.Drawing.Size(156, 20);
-            this.MskNumara.TabIndex = 7;
-            this.MskNumara.ValidatingType = typeof(int);
+            this.tBLDERSBindingSource.DataMember = "TBLDERS";
+            this.tBLDERSBindingSource.DataSource = this.dBNotKayitDataSet;
+            // 
+            // dBNotKayitDataSet
+            // 
+            this.dBNotKayitDataSet.DataSetName = "DBNotKayitDataSet";
+            this.dBNotKayitDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tBLDERSTableAdapter
+            // 
+            this.tBLDERSTableAdapter.ClearBeforeFill = true;
             // 
             // FrmOgretmenDetay
             // 
@@ -417,8 +417,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBNotKayitDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLDERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBNotKayitDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,10 +441,10 @@
         private System.Windows.Forms.TextBox TxtSinav3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label LblKalanSayisi;
         private System.Windows.Forms.Label LblGecenSayisi;
         private System.Windows.Forms.Label LblOrt;
-        private System.Windows.Forms.Label LblKalanSayisi;
+        private System.Windows.Forms.Label labelll;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;

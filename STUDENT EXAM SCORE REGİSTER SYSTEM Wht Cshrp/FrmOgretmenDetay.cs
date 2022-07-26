@@ -51,6 +51,7 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
         {
             
             int sayac = 0;
+            int sayac2 = 0;
             double ortalama, s1, s2, s3;
             
          
@@ -72,6 +73,24 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
                 
             }
             baglanti.Open();
+            SqlCommand say = new SqlCommand("select * From TBLDERS where DURUM=@p1", baglanti);
+            say.Parameters.AddWithValue("@p1", durum);
+            SqlDataReader dr = say.ExecuteReader();
+            while (dr.Read())
+            {
+                if (durum == "True")
+                {
+                    sayac = sayac + 1;
+                    LblGecenSayisi.Text = sayac.ToString();
+                }
+                else if (durum == "False")
+                {
+                    sayac2 = sayac2 + 1;
+                    LblKalanSayisi.Text = sayac2.ToString();
+                }
+            }
+            baglanti.Close();
+            baglanti.Open();
             SqlCommand komut = new SqlCommand("update TBLDERS set OGRS1=@p1,OGRS2=@p2,OGRS3=@p3,ORTALAMA=@P4,DURUM=@p5 where OGRNUMARA=@p6", baglanti);
             komut.Parameters.AddWithValue("@p1", TxtSinav1.Text);
             komut.Parameters.AddWithValue("@p2", TxtSinav2.Text);
@@ -83,19 +102,8 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
             baglanti.Close();
             MessageBox.Show("Kayıt Güncellendi");
 
-            baglanti.Open();
-            SqlCommand say = new SqlCommand("select * From TBLDERS where DURUM=@p1", baglanti);
-            say.Parameters.AddWithValue("@p1", durum);
-            SqlDataReader dr = say.ExecuteReader();
-            while (dr.Read())
-            {
-                if (durum == "True")
-                {
-                    sayac = sayac + 1;
-                    LblGecenSayisi.Text = sayac.ToString();
-                }
-            }
-            baglanti.Close();
+      
+            this.tBLDERSTableAdapter.Fill(this.dBNotKayitDataSet.TBLDERS);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
