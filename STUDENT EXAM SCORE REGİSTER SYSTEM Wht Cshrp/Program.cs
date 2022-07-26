@@ -16,7 +16,7 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmGiris());
         }
     }
 }
