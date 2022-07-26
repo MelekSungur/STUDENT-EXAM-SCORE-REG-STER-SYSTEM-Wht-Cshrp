@@ -21,7 +21,11 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
         private void FrmOgretmenDetay_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dBNotKayitDataSet.TBLDERS' table. You can move, or remove it, as needed.
+            
             this.tBLDERSTableAdapter.Fill(this.dBNotKayitDataSet.TBLDERS);
+
+           
+            
 
         }
         SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-D0LP1EG;Initial Catalog=DBNotKayit;Integrated Security=True");
@@ -41,6 +45,7 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
 
         }
         public string durum;
+        int sayac = 0;
 
         private void BtnGuncelle_Click(object sender, EventArgs e)
         {
@@ -78,7 +83,19 @@ namespace STUDENT_EXAM_SCORE_REGİSTER_SYSTEM_Wht_Cshrp
             baglanti.Close();
             MessageBox.Show("Kayıt Güncellendi");
 
-
+            baglanti.Open();
+            SqlCommand say = new SqlCommand("select * From TBLDERS where DURUM=@p1", baglanti);
+            say.Parameters.AddWithValue("@p1", durum);
+            SqlDataReader dr = say.ExecuteReader();
+            while (dr.Read())
+            {
+                if (durum == "True")
+                {
+                    sayac = sayac + 1;
+                    LblGecenSayisi.Text = sayac.ToString();
+                }
+            }
+            baglanti.Close();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
